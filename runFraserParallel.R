@@ -85,6 +85,7 @@ res
 data <- as.data.table(res)
 write.table(data, "resultsFrom_runFraser3")
 
+# Edit these plots below for your sample names
 png("my_plot_19250X1.png", height = 800, width = 600)
 plotVolcano(fds, type="psi5", "19250X1")
 dev.off()
@@ -128,26 +129,6 @@ dev.off()
 png("my_plot_19250X10.png", height = 800, width = 600)
 plotVolcano(fds, type="psi5", "19250X10")
 dev.off()
-
-#pdf(file = "grid_19250X8.pdf",   # The directory you want to save the file in
-#    width = 4, # The width of the plot in inches
-#    height = 4)
-#res2plot <- res[sampleID == "19250X8" & hgncSymbol == "ASAH2"][1,]
-#ggarrange(ncol=2,
-#    plotVolcano(fds, type="psi5", "19250X8"),
-#    plotExpression(fds, result=res2plot),
-#    plotQQ(fds, result=res2plot),
-#    plotExpectedVsObservedPsi(fds, result=res2plot)
-#)
-#dev.off()
-
-#png("my_plot5.png", height = 800, width = 600)
-#plotExpression(fds, type="psi5", result=sampleRes[1])
-#dev.off()
-#
-#png("my_plot6.png", height = 800, width = 600)
-#plotExpectedVsObservedPsi(fds, result=sampleRes[1])
-#dev.off()
 
 # saving a fds
 #workingDir(fds) <- "/uufs/chpc.utah.edu/common/home/pezzolesi-group2/RNASeq_data/Pezzolesi_RNASeq_data/fraser/working"
