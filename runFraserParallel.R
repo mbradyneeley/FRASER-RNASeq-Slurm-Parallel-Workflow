@@ -13,6 +13,7 @@ setwd("/uufs/chpc.utah.edu/common/home/pezzolesi-group2/RNASeq_data/Pezzolesi_RN
 tmpl <- system.file(package="batchtools", "templates", "slurm-simple.tmpl")
 #param <- BatchtoolsParam(workers=5, cluster="slurm", template=tmpl, resources=list(ncpus=1, walltime=04:00:00, memory=7680))
 # walltime is accepted as seconds so 1sec * 60 (for minute) * 60 (for hour) * 24 (for day) * 3 (for num days)
+# Edit other parameters or add parameters into the resources list to fit your hpc cluster
 param <- BatchtoolsParam(workers=5, cluster="slurm", template=tmpl, resources=list(ncpus=1, walltime=3 * 24 * 60 * 60, memory=7680, partition="notchpeak", account="pezzolesi"))
 register(param)
 # Usage of this will look like: BPPARAM = param
